@@ -4,8 +4,10 @@ import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
+import { Text, Image, useWindowDimensions, View } from 'react-native';
 
 import { useColorScheme } from '@/src/components/useColorScheme';
+import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -46,13 +48,65 @@ export default function RootLayout() {
 
 function RootLayoutNav() {
   const colorScheme = useColorScheme();
-
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+
+        <Stack.Screen name="index" options={{ header: HomeHeader }} />
+        <Stack.Screen name="ChatRoom" options={{ header: ChatRoomHeader, headerBackTitleVisible: false }} />
         <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
       </Stack>
     </ThemeProvider>
   );
+}
+
+const HomeHeader = (props) => {
+  const { width } = useWindowDimensions();
+
+  return (
+    <View style={{ 
+      flexDirection: 'row',
+      justifyContent: 'space-between', 
+      backgroundColor: '#F4F5FF',
+      width,
+      paddingHorizontal: 10,
+      paddingBottom: 25,
+      paddingTop: 60,
+      alignItems: 'center',
+    }}>
+      <Image 
+        source={{ uri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.jpg'}}
+        style={{ width: 30, height: 30, borderRadius: 30, marginLeft: 10}}
+      />
+      <Text style={{flex: 1, marginLeft: 20, fontWeight: 'bold', fontSize: 24}}>Chats</Text>
+      <Feather name="camera" size={24} color="black" style={{ marginHorizontal: 10}} />
+      <Feather name="edit-2" size={24} color="black" style={{ marginHorizontal: 10}} />
+    </View>
+  )
+};
+
+const ChatRoomHeader = (props) => {
+  const { width } = useWindowDimensions();
+  console.log(props);
+
+  return (
+    <View style={{ 
+      flexDirection: 'row',
+      justifyContent: 'space-between', 
+      backgroundColor: '#F4F5FF',
+      width,
+      paddingHorizontal: 10,
+      paddingBottom: 25,
+      paddingTop: 65,
+      alignItems: 'center',
+    }}>
+      <Image 
+        source={{ uri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.jpg'}}
+        style={{ width: 30, height: 30, borderRadius: 30, marginLeft: 10}}
+      />
+      <Text style={{flex: 1, marginLeft: 10, fontWeight: 'bold'}}>{props.children}sadasd</Text>
+      <Feather name="video" size={24} color="black" style={{ marginHorizontal: 10}} />
+      <MaterialCommunityIcons name="dots-horizontal" size={24} color="black" style={{ marginHorizontal: 10}} />
+    </View>
+  )
 }

@@ -22,7 +22,7 @@ const MessageInput = () => {
   return (
     <View style={styles.root}>
       <View style={styles.inputContainer}>
-        <FontAwesome5 name="smile" size={24} color="green" style={styles.icon} />
+        <FontAwesome5 name="smile" size={24} color="grey" style={styles.icon} />
 
         <TextInput
             style={styles.input}
@@ -31,8 +31,8 @@ const MessageInput = () => {
             placeholder='Type something...'
         />
 
-        <Feather name="camera" size={24} color="green" style={styles.icon} />
-        <FontAwesome name="microphone" size={24} color="green" style={styles.icon} />
+        <Feather name="camera" size={24} color="grey" style={styles.icon} />
+        <FontAwesome name="microphone" size={24} color="grey" style={styles.icon} />
       </View>
       <Pressable onPress={onPress} style={styles.buttonContainer}>
         <Text style={styles.buttonText}>Send</Text>
@@ -55,20 +55,20 @@ const styles = StyleSheet.create({
     },
     input: {
         flex: 1,
-        marginHorizontal: 5,
+        marginHorizontal: 10,
     },
     icon: {
-        marginHorizontal: 7,
+        marginHorizontal: 10,
     },
     buttonContainer: {
         width: 60,
-        height: 50,
+        height: 60,
         backgroundColor: 'white',
         justifyContent: 'center',
         alignItems: 'center',
     },
     buttonText: {
-        color: 'green',
+        color: '#6f83d7',
         fontWeight: '500',
     },
 });

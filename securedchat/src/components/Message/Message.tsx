@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
         marginRight: 'auto',
     },
     rightContainer: {
-        backgroundColor: 'green',
+        backgroundColor: '#6f83d7',
         marginLeft: 'auto',
         marginRight: 10,
     },
