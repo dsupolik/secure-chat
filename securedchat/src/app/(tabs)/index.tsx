@@ -23,7 +23,7 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   page: {
-    backgroundColor: 'white',
+    backgroundColor: '#F8F8F8',
     flex: 1,
   },
 

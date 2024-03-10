@@ -3,16 +3,16 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     container: {
       flexDirection: 'row',
-      padding: 10,
+      padding: 15,
     },
     image: {
       width: 50,
       height: 50,
       borderRadius: 30,
-      marginRight: 10,
+      marginRight: 15,
     },
     badgeContainer: {
-      backgroundColor: 'green',
+      backgroundColor: 'red',
       width: 20,
       height: 20,
       borderRadius: 10,
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
       justifyContent: 'space-between',
     },
     name: {
-      fontWeight: 'bold',
+      fontWeight: '500',
       fontSize: 18,
       marginBottom: 3,
     },
